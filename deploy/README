@@ -1,0 +1,8 @@
+scp *.* root@hrichardlee.com:/var/sites/weekendcalendar/
+scp deploy/weekendcalendar-nginx root@hrichardlee.com:/etc/nginx/sites-available/
+
+scp deploy/weekendcalendar.conf root@hrichardlee.com:/etc/init/weekendcalendar.conf
+
+ln -s /etc/nginx/sites-available/weekendcalendar-nginx /etc/nginx/sites-enabled/weekend-calendar-nginx
+
+service nginx reload
